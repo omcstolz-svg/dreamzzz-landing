@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dreamzzz ✨ – Dein Traum wird zur Reise</title>
   <style>
+      /* Responsive Anpassungen für Smartphones */
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(180deg, #18122B 0%, #221B3A 100%);
@@ -134,11 +135,84 @@
       font-size:1rem;
       color: #B693FE;
     }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 1rem;
+      }
+      .hero {
+        min-height: unset;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
+        background-size: cover;
+      }
+      h1 {
+        font-size: 2.1rem;
+        margin-bottom: 1.1rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+      .features-grid {
+        gap: 1.2rem;
+        margin-top: 1.2rem;
+      }
+      .feature-card {
+        padding: 1.2rem 0.7rem;
+        font-size: 1rem;
+        border-radius: 14px;
+      }
+      .feature-icon {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .feature-headline {
+        font-size: 1.1rem;
+      }
+      .feature-list {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .footer {
+        font-size: 0.95rem;
+        padding: 18px 4vw;
+      }
+      /* Sprachleiste */
+      .lang-bar {
+        gap: 0.5rem !important;
+        padding: 0.5rem 0 0.2rem 0 !important;
+      }
+      .lang-bar img {
+        width: 22px !important;
+        height: 22px !important;
+      }
+      /* Logo & Screenshot */
+      .logo-row {
+        margin-bottom: 1.1rem !important;
+        margin-top: -0.7rem !important;
+      }
+      .logo-img {
+        width: 120px !important;
+        max-width: 60vw !important;
+      }
+      .screenshot {
+        max-width: 95vw !important;
+        border-radius: 4vw !important;
+      }
+      .cta-btn {
+        padding: 12px 18px;
+        font-size: 1rem;
+        border-radius: 24px;
+        margin-top: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Sprachauswahl-Leiste -->
-  <div style="width:100%; display:flex; justify-content:center; align-items:center; gap:1.2rem; padding: 1.1rem 0 0.5rem 0; background:transparent;">
+  <div class="lang-bar" style="width:100%; display:flex; justify-content:center; align-items:center; gap:1.2rem; padding: 1.1rem 0 0.5rem 0; background:transparent;">
     <img src="assets/german.png" alt="Deutsch" title="Deutsch" style="width:32px; height:32px; object-fit:contain; opacity:0.92;">
     <img src="assets/united-kingdom.png" alt="English" title="English" style="width:32px; height:32px; object-fit:contain; opacity:0.92;">
     <img src="assets/france.png" alt="Français" title="Français" style="width:32px; height:32px; object-fit:contain; opacity:0.92;">
@@ -149,9 +223,9 @@
   <!-- HERO -->
   <section class="hero">
     <div style="width: 100%; max-width: 700px; margin: 0 auto;">
-      <div style="display:flex; justify-content:center; align-items:center; margin-bottom:2.5rem; margin-top:-1.7rem;">
+      <div class="logo-row" style="display:flex; justify-content:center; align-items:center; margin-bottom:2.5rem; margin-top:-1.7rem;">
         <div style="position:relative; display:inline-block;">
-          <img src="assets/dreamzzz-logo.png" alt="Dreamzzz Logo" style="display:block; width:270px; max-width:63vw; height:auto; filter: drop-shadow(0 0 32px #B693FE88) drop-shadow(0 0 64px #A084E8AA);">
+          <img class="logo-img" src="assets/dreamzzz-logo.png" alt="Dreamzzz Logo" style="display:block; width:270px; max-width:63vw; height:auto; filter: drop-shadow(0 0 32px #B693FE88) drop-shadow(0 0 64px #A084E8AA);">
           <!-- Lila Aura: Drop-Shadow -->
         </div>
       </div>
@@ -166,7 +240,7 @@
         </a>
       </div>
       <div style="margin: 2rem auto 0 auto; max-width: 340px;">
-        <img src="assets/dream-analysis-screenshot.jpg" alt="Dream Analysis Screenshot" style="width:100%; border-radius: 2.5vw; box-shadow: 0 0 48px 0 #A084E8CC, 0 2px 16px #7C3AED88; display:block;">
+        <img class="screenshot" src="assets/dream-analysis-screenshot.jpg" alt="Dream Analysis Screenshot" style="width:100%; border-radius: 2.5vw; box-shadow: 0 0 48px 0 #A084E8CC, 0 2px 16px #7C3AED88; display:block;">
       </div>
       <!-- Badges entfernt -->
       <!-- Zeile entfernt: Session 2 ist live: Äther zeigt jetzt echte Community-Träume aus Supabase + Premium-Kauf funktioniert 100% • Paywall-Crash behoben ✨ -->
