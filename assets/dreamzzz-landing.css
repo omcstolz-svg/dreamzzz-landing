@@ -238,6 +238,7 @@ footer {
 .mockup-img {
     width: 100%;
     max-width: 340px;
+    aspect-ratio: 340 / 752;
     border-radius: 2.5vw;
     box-shadow: 0 0 48px 0 #A084E8CC, 0 2px 16px #7C3AED88;
     display: block;
