@@ -1,3 +1,49 @@
+.footer-keywords {
+    text-align: center;
+    display: block;
+}
+.footer-link {
+    display: inline-block;
+    margin: 0 8px 8px 8px;
+    text-align: center;
+}
+.highlight-text {
+    padding-top: 72px !important;
+    padding-bottom: 14px !important;
+}
+/* Utility-Klasse für exakt 72px Padding unten */
+.padding-72 {
+    padding-bottom: 72px !important;
+}
+/* Gradient-Underline-Link-Effekt */
+a, .footer-link {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    transition: color 0.2s;
+}
+a::after, .footer-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,#ff00cc,#00ffff);
+    border-radius: 2px;
+    opacity: 0.85;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+}
+a:hover, .footer-link:hover {
+    color: #00ffff;
+}
+a:hover::after, .footer-link:hover::after {
+    transform: scaleX(1);
+}
 /* --- Präzise, fein abgestufte Responsive Breakpoints für alle wichtigen Gerätegrößen --- */
 
 @media (max-width: 414px) {
@@ -167,10 +213,12 @@ h1, h2, h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+/* Headline mit exakt 72px Abstand zum Button */
+/* Headline mit exakt 144px Abstand zum Button */
 h1 {
     font-size: 72px;
     line-height: 1.08;
-    margin-bottom: 64px;
+    margin-bottom: 144px;
     background: linear-gradient(90deg, #fff 30%, #9d50bb 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -565,19 +613,67 @@ a:focus, button:focus, .cta-button:focus, .sticky-download-btn:focus {
     .grid-col-12, .grid-col-6, .grid-col-4, .grid-col-3, .grid-col-2 { grid-column: span 2; }
 }
 
-/* Normierte Abstände für Sections */
+/* Harmonische vertikale Abstände für einheitliches, golden-ratio-basiertes Layout */
 section, header, footer {
-    margin-bottom: var(--space-xl);
+    margin-top: var(--space-l);
+    margin-bottom: var(--space-l);
     padding-top: var(--space-l);
     padding-bottom: var(--space-l);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     section, header, footer {
-        margin-bottom: var(--space-l);
+        margin-top: var(--space-m);
+        margin-bottom: var(--space-m);
         padding-top: var(--space-m);
         padding-bottom: var(--space-m);
     }
+}
+@media (max-width: 600px) {
+    section, header, footer {
+        margin-top: var(--space-s);
+        margin-bottom: var(--space-s);
+        padding-top: var(--space-s);
+        padding-bottom: var(--space-s);
+    }
+}
+
+/* Harmonische Abstände für Cards, Testimonials, FAQ */
+.card, .testimonial-card, #faq details {
+    margin-top: var(--space-s);
+    margin-bottom: var(--space-s);
+}
+
+/* Harmonische Abstände für Headings */
+h1, h2, h3 {
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-s);
+}
+
+@media (max-width: 600px) {
+    h1, h2, h3 {
+        margin-top: var(--space-s);
+        margin-bottom: var(--space-xs);
+    }
+}
+
+/* Harmonische Abstände für Buttons */
+.cta-button, .sticky-download-btn {
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
+}
+
+@media (max-width: 600px) {
+    .cta-button, .sticky-download-btn {
+        margin-top: var(--space-s);
+        margin-bottom: var(--space-s);
+    }
+}
+
+/* Harmonische Abstände für Footer-Keywords */
+.footer-keywords {
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
 }
 
 /* Cards und Testimonials mit normiertem Spacing */
