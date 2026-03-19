@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://omcstolz-svg.github.io/dreamzzz-landing/sitemap.xml

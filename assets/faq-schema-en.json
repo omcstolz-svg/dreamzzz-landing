@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Dreamzzz really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the app is 100% free, contains no ads, and provides full AI-powered dream analysis without hidden costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How safe is my dream data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your privacy is our priority. All dream data stays on your device; there is no cloud requirement or data tracking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the AI dream analysis work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dreamzzz uses advanced AI models to interpret your dreams based on psychological methods like C.G. Jung and Sigmund Freud."
+      }
+    }
+  ]
+}
