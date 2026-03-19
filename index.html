@@ -1,376 +1,149 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dreamzzz ✨ – Dein Traum wird zur Reise</title>
-  <style>
-          /* Lokale Schriftarten einbinden */
-          @font-face {
-            font-family: 'Poppins';
-            src: url('assets/poppins_regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Poppins';
-            src: url('assets/poppins_semibold.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Poppins';
-            src: url('assets/poppins_bold.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Inter';
-            src: url('assets/inter_regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Inter';
-            src: url('assets/inter_medium.ttf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Inter';
-            src: url('assets/inter_variable.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Varela Round';
-            src: url('assets/varela_round_regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
-      /* Responsive Anpassungen für Smartphones */
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #18122B 0%, #221B3A 100%);
-      color: #fff;
-      margin:0;
-    }
-    .hero {
-      min-height: 61.8vh;
-      background: url('hero-dream.jpg') center/cover;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding-top: 6.18vh;
-      padding-bottom: 6.18vh;
-    }
-    .cta-btn {
-      background: linear-gradient(90deg, #A084E8 0%, #7C3AED 100%);
-      padding: 15px 40px;
-      font-size: 1.236rem;
-      border-radius: 38px;
-      color:#fff;
-      font-weight:bold;
-      box-shadow: 0 10px 30px rgba(160,132,232,0.25);
-      margin-top: 2.6rem;
-      margin-bottom: 1.618rem;
-      border: none;
-      transition: background 0.2s;
-    }
-    .cta-btn:hover {
-      background: linear-gradient(90deg, #B693FE 0%, #A084E8 100%);
-    }
-    section, .section {
-      padding-top: 2.5rem;
-      padding-bottom: 2.5rem;
-    }
-    h1, h2, h3 {
-      margin-bottom: 2rem;
-      color: #B693FE;
-      font-family: 'Poppins', sans-serif;
-    }
-    h1 {
-      font-size: 4.236rem;
-      line-height: 1.13;
-      color: #B693FE;
-      margin-top: 0;
-    }
-    h2 {
-      font-size: 2.618rem;
-      color: #A084E8;
-      margin-top: 0;
-    }
-    h3 {
-      font-size: 1.618rem;
-      color: #B693FE;
-      margin-top: 0;
-    }
-    .features-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-      gap:2.5rem;
-      margin-top:2.5rem;
-    }
-    .feature-card {
-      background:#221B3A;
-      padding:2.2rem 1.2rem;
-      border-radius:24px;
-      min-height: 220px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      box-shadow: 0 4px 24px #18122B44;
-      margin: 0 auto;
-      font-size: 1.15rem;
-      max-width: 98vw;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    @media (max-width: 700px) {
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-      .feature-card {
-        min-width: 0;
-        width: 100%;
-        max-width: 98vw;
-        padding: 1.1rem 0.5rem;
-      }
-    }
-    .feature-icon {
-      font-size:6rem;
-      margin-bottom: 1.3rem;
-      display:block;
-      filter: drop-shadow(0 2px 16px #A084E8AA);
-    }
-    .feature-headline {
-      text-align:center;
-      margin:0 0 0.7rem 0;
-      font-size:1.7rem;
-      font-weight:700;
-      color: #B693FE;
-    }
-    .feature-list {
-      font-family: 'Inter', Arial, sans-serif;
-      font-weight:400;
-      font-size:1.22rem;
-      margin:0;
-      padding-left:0;
-      text-align:left;
-      color: #F3F3F3;
-      line-height: 2.2;
-      list-style: none;
-    }
-    .feature-list li {
-      position: relative;
-      padding-left: 2.1em;
-    }
-    .feature-list li::before {
-      content: '✔️';
-      position: absolute;
-      left: 0;
-      top: 0.1em;
-      font-size: 1.1em;
-      color: #B693FE;
-    }
-    .footer {
-      text-align:center;
-      padding:38.2px;
-      background:#18122B;
-      font-size:1rem;
-      color: #B693FE;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        font-size: 1rem;
-      }
-      .hero {
-        min-height: unset;
-        padding-top: 2.5vh;
-        padding-bottom: 2.5vh;
-        background-size: cover;
-      }
-      h1 {
-        font-size: 2.1rem;
-        margin-bottom: 1.1rem;
-      }
-      h2 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-      }
-      .features-grid {
-        gap: 1.2rem;
-        margin-top: 1.2rem;
-      }
-      .feature-card {
-        padding: 1.2rem 0.7rem;
-        font-size: 1rem;
-        border-radius: 14px;
-      }
-      .feature-icon {
-        font-size: 2.2rem;
-        margin-bottom: 0.5rem;
-      }
-      .feature-headline {
-        font-size: 1.1rem;
-      }
-      .feature-list {
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-      .footer {
-        font-size: 0.95rem;
-        padding: 18px 4vw;
-      }
-      /* Sprachleiste */
-      .lang-bar {
-        gap: 0.5rem !important;
-        padding: 0.5rem 0 0.2rem 0 !important;
-      }
-      .lang-bar img {
-        width: 22px !important;
-        height: 22px !important;
-      }
-      /* Logo & Screenshot */
-      .logo-row {
-        margin-bottom: 1.1rem !important;
-        margin-top: -0.7rem !important;
-      }
-      .logo-img {
-        width: 120px !important;
-        max-width: 60vw !important;
-      }
-      .screenshot {
-        max-width: 95vw !important;
-        border-radius: 4vw !important;
-      }
-      .cta-btn {
-        padding: 12px 18px;
-        font-size: 1rem;
-        border-radius: 24px;
-        margin-top: 1.2rem;
-        margin-bottom: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamzzz – Unlock Your Dreams</title>
+    <meta name="description" content="The most beautiful Android dream journal in the world. Download now for free! AI analysis, community, privacy.">
+    <meta name="keywords" content="dream journal, dream interpretation, Android, app, AI, analysis, sleep, dreams, community">
+    <meta name="author" content="Dreamzzz Team">
+    <link rel="stylesheet" href="assets/dreamzzz-landing.css">
+    <!-- Open Graph & Twitter Card Meta-Tags -->
+    <meta property="og:title" content="Dreamzzz – Unlock Your Dreams">
+    <meta property="og:description" content="The most beautiful Android dream journal in the world. Download now for free!">
+    <meta property="og:image" content="assets/og-image.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dreamzzz.app/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dreamzzz – Unlock Your Dreams">
+    <meta name="twitter:description" content="The most beautiful Android dream journal in the world. Download now for free!">
+    <meta name="twitter:image" content="assets/og-image.png">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="assets/site.webmanifest">
 </head>
 <body>
-  <!-- Sprachauswahl-Leiste -->
-  <div class="lang-bar" style="width:100%; display:flex; justify-content:center; align-items:center; gap:1.2rem; padding: 1.1rem 0 0.5rem 0; background:transparent;">
-    <a href="index.de.html"><img src="assets/german.png" alt="Deutsch" title="Deutsch" style="width:32px; height:32px; object-fit:contain; opacity:0.92;"></a>
-    <a href="index.en.html"><img src="assets/united-kingdom.png" alt="English" title="English" style="width:32px; height:32px; object-fit:contain; opacity:0.92;"></a>
-    <a href="index.fr.html"><img src="assets/france.png" alt="Français" title="Français" style="width:32px; height:32px; object-fit:contain; opacity:0.92;"></a>
-    <a href="index.ru.html"><img src="assets/russia.png" alt="Русский" title="Русский" style="width:32px; height:32px; object-fit:contain; opacity:0.92;"></a>
-    <a href="index.es.html"><img src="assets/world.png" alt="Global" title="Global" style="width:32px; height:32px; object-fit:contain; opacity:0.92;"></a>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div style="width: 100vw; max-width: 100vw; margin: 0; padding: 0 0.5rem; box-sizing: border-box;">
-      <div class="logo-row" style="display:flex; justify-content:center; align-items:center; margin-bottom:2.5rem; margin-top:-1.7rem;">
-        <div style="position:relative; display:inline-block;">
-          <img class="logo-img" src="assets/dreamzzz-logo.png" alt="Dreamzzz Logo" style="display:block; width:270px; max-width:63vw; height:auto; filter: drop-shadow(0 0 32px #B693FE88) drop-shadow(0 0 64px #A084E8AA);">
-          <!-- Lila Aura: Drop-Shadow -->
+    <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:1000;background:#fff;color:#000;padding:8px 16px;border-radius:8px;">Skip to content</a>
+    <header role="banner">
+        <div class="grid">
+            <div class="lang-bar grid-col-12" aria-label="Language selection">
+                <a href="index.de.html"><img src="assets/german.png" alt="German" title="German" loading="lazy"></a>
+                <a href="index.en.html"><img src="assets/united-kingdom.png" alt="English" title="English" loading="lazy"></a>
+                <a href="index.fr.html"><img src="assets/france.png" alt="French" title="French" loading="lazy"></a>
+                <a href="index.ru.html"><img src="assets/russia.png" alt="Russian" title="Russian" loading="lazy"></a>
+                <a href="index.es.html"><img src="assets/world.png" alt="Global" title="Global" loading="lazy"></a>
+            </div>
+            <div class="grid-col-12" style="text-align:center;">
+                <img src="assets/dreamzzz-logo.png" alt="Dreamzzz App Logo" class="logo-img" width="200" height="200" loading="lazy">
+                <h1><span class="gradient-text">Your dreams.</span><br><span class="gradient-text">Unlocked.</span></h1>
+                <a href="https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk" class="cta-button" aria-label="Download app now for free" style="text-align:center;">DOWNLOAD</a>
+            </div>
+            <div class="mockup-container grid-col-12">
+                <img src="assets/analysis_en.jpg" alt="Screenshot of Dreamzzz app analysis (English)" class="mockup-img" width="340" height="680" loading="lazy">
+            </div>
+            <div class="grid-col-12" style="text-align:center; margin: 32px 0 24px 0;">
+                <div style="font-size:1.35rem;font-weight:600;margin-bottom:12px;">
+                    <span class="gradient-text">Coming soon to Google Play Store!</span>
+                </div>
+                <img src="assets/google.svg" alt="Google Play Store Logo" style="width:340px;max-width:100%;height:auto;display:inline-block;" loading="lazy">
+            </div>
         </div>
-      </div>
-      <h1 style="margin:0 0 1.5rem 0;">
-        Deine Träume.<br>
-        <span style="background:linear-gradient(90deg,#ff00cc,#00ffff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Entschlüsselt.</span>
-      </h1>
-      <!-- Zeile entfernt: Das schönste Android-Traumtagebuch der Welt mit Freud • Jung • Spirituelle KI • Live-Äther-Community -->
-      <div style="margin:0.75rem 0 0.75rem 0;">
-        <a href="https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk" class="cta-btn" style="text-decoration:none; display:inline-block;">
-          🚀 JETZT KOSTENLOS HERUNTERLADEN
-        </a>
-      </div>
-      <div style="margin: 2rem auto 0 auto; max-width: 340px;">
-        <img class="screenshot" src="assets/dream-analysis-screenshot.jpg" alt="Dream Analysis Screenshot" style="width:100%; border-radius: 2.5vw; box-shadow: 0 0 48px 0 #A084E8CC, 0 2px 16px #7C3AED88; display:block;">
-      </div>
-      <!-- Badges entfernt -->
-      <!-- Zeile entfernt: Session 2 ist live: Äther zeigt jetzt echte Community-Träume aus Supabase + Premium-Kauf funktioniert 100% • Paywall-Crash behoben ✨ -->
-    </div>
-  </section>
-
-  <!-- TRUST BAR -->
-  <!-- Trust-Bar entfernt -->
-
-  <!-- FEATURES -->
-  <section style="padding:61.8px 0 38.2px 0; background:#1a003322; width:100vw; max-width:100vw; box-sizing:border-box;">
-    <h2 style="text-align:center; color:#fff;">Was macht Dreamzzz so besonders?</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <span class="feature-icon">🧠</span>
-        <div class="feature-headline">High End Traum-Analyse</div>
-        <ol class="feature-list">
-          <li>4 verschiedene Analyse Varianten</li>
-          <li>Deutungshypothesen</li>
-          <li>Integration & Handlung</li>
-          <li>Emtionen & Stimmungen</li>
-        </ol>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">📖</span>
-        <div class="feature-headline">Traumtagebuch 2.0</div>
-        <ol class="feature-list">
-          <li>Schöne Compose-Oberfläche</li>
-          <li>Lucid-Flags & Streak</li>
-          <li>PDF-Export mit Analyse</li>
-          <li>150 echte Tags</li>
-        </ol>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">👁️</span>
-        <div class="feature-headline">Jung-Tagebuch</div>
-        <ol class="feature-list">
-          <li>Analytische Psychologie</li>
-          <li>Traumsymbole nach Jung</li>
-          <li>Archetypen & Individuation</li>
-          <li>Tiefenpsychologische Einblicke</li>
-        </ol>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">📊</span>
-        <div class="feature-headline">Statistik</div>
-        <ol class="feature-list">
-          <li>Traumtrends & Auswertungen</li>
-          <li>Eigene Schlafstatistik</li>
-          <li>Visualisierte Fortschritte</li>
-          <li>Individuelle Auswertungen</li>
-        </ol>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">🌌</span>
-        <div class="feature-headline">Der Äther – Live!</div>
-        <ol class="feature-list">
-          <li>Community-Träume live</li>
-          <li>Symbol-Frequenz-Bubbles</li>
-          <li>Globale Trends</li>
-          <li>Seed-Träume & Cache</li>
-        </ol>
-      </div>
-    </div>
-    <!-- Download-Button und Hinweistext entfernt -->
-  </section>
-
-  <!-- Bereich 'So schön sieht es aus…' entfernt -->
-
-  <!-- FINAL CTA entfernt -->
-
-  <footer class="footer">
-    Dreamzzz © 2026 • Android-only Meisterwerk • <a href="#" style="color:#ff00cc">Impressum</a> • 
-    <strong>Direkt-Download-Link:</strong> 
-    <a href="https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk" style="color:#00ffff; font-weight:bold;">https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk</a>
-  </footer>
-
+    </header>
+    <main id="main" role="main">
+        <section id="features" aria-labelledby="features-heading">
+            <div class="grid">
+                <h2 id="features-heading" class="grid-col-12">Features</h2>
+                <div class="card grid-col-3">
+                    <img src="assets/dreamzzz-logo.png" alt="Dreamzzz Logo" class="card-icon" width="128" height="128" loading="lazy">
+                        <h3>Your personal dream analysis</h3>
+                        <div>Comprehensive interpretation</div>
+                        <div>by S. Freud</div>
+                        <div>by C.G. Jung</div>
+                        <div>Spiritual interpretation</div>
+                        <div>Interpretation hypothesis</div>
+                        <div>Compensation function</div>
+                        <div>Integration & action</div>
+                        <div>Creative implementation</div>
+                </div>
+                <div class="card grid-col-3">
+                    <img src="assets/book.png" alt="Buch Icon" class="card-icon" width="128" height="128" loading="lazy">
+                        <h3>Your structured dream journal</h3>
+                        <div>Search</div>
+                        <div>Filter</div>
+                        <div>Interactive</div>
+                        <div>Organized</div>
+                        <div>Data export</div>
+                        <div>Flags</div>
+                        <div>Streaks</div>
+                        <div>PDF export</div>
+                </div>
+                <div class="card grid-col-3">
+                    <svg width="128" height="128" viewBox="0 0 64 64" fill="none" class="card-icon" aria-hidden="true">
+                        <rect x="16" y="36" width="6" height="12" rx="2" fill="#9d50bb"/>
+                        <rect x="28" y="28" width="6" height="20" rx="2" fill="#9d50bb"/>
+                        <rect x="40" y="20" width="6" height="28" rx="2" fill="#9d50bb"/>
+                    </svg>
+                        <h3>Your comprehensive dream statistics</h3>
+                        <div>Dream trends</div>
+                        <div>Evaluations</div>
+                        <div>Sleep statistics</div>
+                        <div>Visualized progress</div>
+                        <div>Dream fields</div>
+                        <div>Moods</div>
+                        <div>Light / shadow</div>
+                        <div>Insights</div>
+                </div>
+                <div class="card grid-col-3">
+                    <img src="assets/cloud.png" alt="Cloud Icon" class="card-icon" width="128" height="128" loading="lazy">
+                        <h3>The Ether – Collective Dream Thinking</h3>
+                        <div>Community insight</div>
+                        <div>Emotions</div>
+                        <div>Moods</div>
+                        <div>Trends</div>
+                        <div>Symbol frequency bubbles</div>
+                        <div>Global trends</div>
+                        <div>Seed dreams & cache</div>
+                        <div>Tags</div>
+                </div>
+            </div>
+        </section>
+        <section id="social-proof" aria-labelledby="social-proof-heading">
+            <div class="grid">
+                    <h2 id="social-proof-heading" class="grid-col-12">What users say</h2>
+                <div class="testimonial-card grid-col-4">
+                        <div style="font-weight:bold;" aria-label="5 star rating">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"The best dream journal app I've ever used. The analysis is brilliant!"</p>
+                    <div style="font-size:0.95rem;opacity:0.7;">– Anna, 27</div>
+                </div>
+                <div class="testimonial-card grid-col-4">
+                        <div style="font-weight:bold;" aria-label="5 star rating">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"I finally understand my dreams! Great design and awesome community."</p>
+                    <div style="font-size:0.95rem;opacity:0.7;">– Max, 34</div>
+                </div>
+                <div class="testimonial-card grid-col-4">
+                        <div style="font-weight:bold;" aria-label="5 star rating">⭐️⭐️⭐️⭐️⭐️</div>
+                        <p>"The live ether feature is unique. Absolutely recommended!"</p>
+                    <div style="font-size:0.95rem;opacity:0.7;">– Sophie, 22</div>
+                </div>
+                <div class="press-logos grid-col-12" style="margin-top:2rem;text-align:center;">
+                    
+                </div>
+            </div>
+        </section>
+        <section id="faq" aria-labelledby="faq-heading">
+            <div class="grid">
+                <h2 id="faq-heading" class="grid-col-12">Frequently Asked Questions</h2>
+                <details class="grid-col-6"><summary>Is Dreamzzz really free?</summary><div>Yes, the app is 100% free and contains no ads.</div></details>
+                <details class="grid-col-6"><summary>How does the dream analysis work?</summary><div>You write down your dream, choose an analysis type, and instantly receive an AI-powered evaluation.</div></details>
+                <details class="grid-col-6"><summary>Can I export my dreams?</summary><div>Yes, you can export your dream journal as a PDF – including analysis.</div></details>
+                <details class="grid-col-6"><summary>How safe is my data?</summary><div>Your data stays on your device. There is no cloud requirement.</div></details>
+            </div>
+        </section>
+        
+    </main>
+    <footer role="contentinfo">
+        
+    </footer>
+    <a href="https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk" class="sticky-download-btn" aria-label="Download app" style="text-align:center;">DOWNLOAD</a>
 </body>
 </html>
