@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-            .logo-img {
-                margin-bottom: 0px !important;
-            }
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dreamzzz | Kostenlose KI Traumanalyse & Traumtagebuch App</title>
@@ -34,86 +31,154 @@
             font-weight: 700;
             margin-top: 1.5em;
             margin-bottom: 0.5em;
-        }
-        h1 {
-            font-size: 72px;
-            letter-spacing: -2px;
-            line-height: 1.05;
-            word-break: break-word;
-            width: 100vw;
-            max-width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            text-align: center;
-            display: block;
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 10vw;
-                letter-spacing: -1px;
-                margin-left: 0;
+        <style>
+            html, body {
+                background: #0f172a;
+                color: #f8fafc;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 1.08rem;
+                line-height: 1.7;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+            a {
+                color: #818cf8;
+                text-decoration: underline;
+                transition: color 0.2s;
+            }
+            a:hover, a:focus {
+                color: #f87171;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                color: #818cf8;
+                font-family: inherit;
+                font-weight: 700;
+                margin-top: 1.2rem;
+                margin-bottom: 0.6rem;
+                text-align: center;
+                margin-left: 20px;
+                margin-right: 20px;
+                word-break: break-word;
+                white-space: normal;
+            }
+            h2 {
+                font-size: 36px;
+                word-break: break-word;
+                white-space: normal;
+            }
+                line-height: 1.01;
+                word-break: break-word;
                 width: 100vw;
                 max-width: 100vw;
-                padding-left: 0;
-                padding-right: 0;
+                margin-left: calc(-50vw + 50%);
+                margin-top: 1.2rem;
+                margin-bottom: 1.2rem;
                 text-align: center;
-                line-height: 1.1;
+                display: block;
             }
-        }
-        @media (max-width: 900px) {
-            h1 {
-                font-size: 4.2rem;
+            @media (max-width: 1200px) {
+                h1 { font-size: 96px; }
             }
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.6rem;
+            @media (max-width: 600px) {
+                h1 { font-size: 36px; margin-top: 1.5rem; margin-bottom: 1.5rem; max-width: 100%; width: 100%; margin-left: auto; margin-right: auto; }
+                .grid { gap: 0.3rem; max-width: 340px; width: 100%; margin-left: auto; margin-right: auto; }
+                .card, .testimonial-card, .faq-container details { max-width: 340px; width: 100%; padding: 0.4rem 0.1rem; margin-left: auto; margin-right: auto; }
+                .logo-img, .mockup-img, .card-icon { max-width: 340px; width: 100%; height: auto; margin-left: auto; margin-right: auto; }
+                .cta-button, .sticky-download-btn { max-width: 340px; width: 100%; }
+                .footer-keywords { max-width: 340px; width: 100%; margin-left: auto; margin-right: auto; }
             }
-        }
-        h2 {
-            font-size: 1.6rem;
-        }
-        h3 {
-            font-size: 1.2rem;
-        }
-        p {
-            color: #f1f5f9;
-            margin-bottom: 1em;
-        }
-        .card, .testimonial-card, .faq-container details {
-            background: #1e293b;
-            color: #f8fafc;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px 0 #1e293b33;
-        }
-        .card-icon, .mockup-img {
-            background: #334155;
-            border-radius: 12px;
-        }
-        .cta-button, .sticky-download-btn {
-            background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 14px 32px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            box-shadow: 0 2px 8px 0 #818cf833;
-            transition: background 0.2s, color 0.2s;
-        }
-        .cta-button:hover, .sticky-download-btn:hover {
-            background: linear-gradient(90deg, #f87171 0%, #6366f1 100%);
-            color: #fff;
-        }
-        .footer-keywords {
-            background: #1e293b;
-            color: #f8fafc;
-            border-radius: 10px;
-            padding: 18px 0 10px 0;
-        }
-    </style>
-    <!-- Open Graph & Twitter Card Meta-Tags -->
-    <meta property="og:title" content="Dreamzzz – Entschlüssele deine Träume">
-    <meta property="og:description" content="Das schönste Android-Traumtagebuch der Welt. Jetzt kostenlos downloaden!">
+            }
+            .logo-img {
+                display: block;
+                margin: 0 auto 0.7rem auto !important;
+                padding: 0;
+                max-width: 200px;
+            }
+            p, .card, .testimonial-card, .faq-container details, .footer-keywords {
+                margin-top: 0.6rem;
+                margin-bottom: 0.6rem;
+            }
+            .card, .testimonial-card, .faq-container details {
+                background: #1e293b;
+                color: #f8fafc;
+                border-radius: 14px;
+                box-shadow: 0 2px 12px 0 #1e293b33;
+                padding: 1.1rem 0.7rem;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 420px;
+            }
+            .card-icon, .mockup-img {
+                background: #334155;
+                border-radius: 16px;
+                display: block;
+                margin: 0 auto 0.5rem auto;
+            }
+            .cta-button, .sticky-download-btn {
+                background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+                color: #fff;
+                border: none;
+                border-radius: 10px;
+                padding: 12px 0;
+                font-size: 1.25rem;
+                font-weight: 700;
+                box-shadow: 0 2px 12px 0 #818cf833;
+                transition: background 0.2s, color 0.2s;
+                width: 340px;
+                max-width: 95vw;
+                display: block;
+                margin: 1rem auto 1rem auto;
+                text-align: center;
+            }
+            .cta-button:hover, .sticky-download-btn:hover {
+                background: linear-gradient(90deg, #f87171 0%, #6366f1 100%);
+                color: #fff;
+            }
+            .footer-keywords {
+                background: #1e293b;
+                color: #f8fafc;
+                border-radius: 14px;
+                padding: 10px 0 7px 0;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 900px;
+            }
+            .grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: stretch;
+                gap: 1.2rem;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1200px;
+                width: 100%;
+            }
+            .grid-col-12, .grid-col-4, .grid-col-3, .grid-col-6 {
+                flex: 1 1 100%;
+                max-width: 100%;
+                text-align: center;
+                margin: 0 auto;
+            }
+            @media (min-width: 900px) {
+                .grid-col-4 { flex: 1 1 22%; max-width: 22%; }
+                .grid-col-3 { flex: 1 1 22%; max-width: 22%; }
+                .grid-col-6 { flex: 1 1 45%; max-width: 45%; }
+                .grid-col-12 { flex: 1 1 100%; max-width: 100%; }
+            }
+            @media (max-width: 900px) {
+                .grid { gap: 0.7rem; }
+                .card, .testimonial-card, .faq-container details { max-width: 98vw; padding: 0.7rem 0.3rem; }
+            }
+            @media (max-width: 600px) {
+                .grid { gap: 0.3rem; }
+                .card, .testimonial-card, .faq-container details { max-width: 100vw; padding: 0.4rem 0.1rem; }
+            }
+        </style>
     <meta property="og:image" content="assets/og-image.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dreamzzz.app/">
@@ -182,8 +247,8 @@
                 <img src="assets/analysis_de.jpg" alt="Smartphone-Screenshot der Dreamzzz App: Analyse eines Traums nach C.G. Jung mit KI-Interpretation" class="mockup-img" width="340" height="752" loading="lazy">
             </div>
             <div class="grid-col-12" style="margin: 24px 0 16px 0; text-align: center;">
-                <h2 style="font-size:1.35rem; font-weight:700; margin-bottom:8px;">Dreamzzz – Deine App für moderne Traumdeutung</h2>
-                <p style="font-size:1.08rem; max-width:700px; margin:0 auto;">Dreamzzz ist mehr als nur ein digitales Traumtagebuch. Wir kombinieren klassische Psychologie mit moderner Technologie, um dir eine tiefgreifende KI-Traumanalyse direkt auf dein Smartphone zu bringen. Egal, ob du spezifische Traumsymbole deuten möchtest oder die Lehren von C.G. Jung und Sigmund Freud bevorzugst – unsere App hilft dir dabei, die verborgene Bedeutung deiner Träume zu entschlüsseln. Nutze unsere kostenlose Traumdeutung online und offline, lerne deine Schlafmuster durch detaillierte Statistiken besser kennen und entdecke im „Ether“ globale Traumtrends einer wachsenden Community. 100% privat, sicher und ohne Werbung.</p>
+                <h2 style="font-size:1.35rem; font-weight:700; margin-bottom:8px; margin-left:20px; margin-right:20px; word-break:break-word; white-space:normal;">Dreamzzz – Deine App für moderne Traumdeutung</h2>
+                <p style="font-size:1.08rem; max-width:700px; margin:0 auto; margin-left:20px; margin-right:20px;">Dreamzzz ist mehr als nur ein digitales Traumtagebuch. Wir kombinieren klassische Psychologie mit moderner Technologie, um dir eine tiefgreifende KI-Traumanalyse direkt auf dein Smartphone zu bringen. Egal, ob du spezifische Traumsymbole deuten möchtest oder die Lehren von C.G. Jung und Sigmund Freud bevorzugst – unsere App hilft dir dabei, die verborgene Bedeutung deiner Träume zu entschlüsseln. Nutze unsere kostenlose Traumdeutung online und offline, lerne deine Schlafmuster durch detaillierte Statistiken besser kennen und entdecke im „Ether“ globale Traumtrends einer wachsenden Community. 100% privat, sicher und ohne Werbung.</p>
             </div>
             <div class="grid-col-12" style="text-align:center; margin: 32px 0 24px 0;">
                 <div style="font-size:1.35rem;font-weight:600;margin-bottom:12px;">
