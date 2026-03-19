@@ -1,36 +1,421 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dreamzzz | Kostenlose KI Traumanalyse & Traumtagebuch App</title>
-    <meta name="description" content="Verstehe deine Träume mit KI-Analysen nach Freud & Jung. 100% kostenlos, sicher und ohne Werbung. Jetzt Dreamzzz Traumtagebuch herunterladen!">
-    <meta name="keywords" content="Traumtagebuch, Traumdeutung, Android, App, KI, Analyse, Schlaf, Träume, Community">
-    <meta name="author" content="Dreamzzz Team">
-    <link rel="stylesheet" href="assets/dreamzzz-landing.css">
-    <style>
-        body {
-            background: #0f172a;
-            color: #f8fafc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.08rem;
-            line-height: 1.7;
-            margin: 0;
-        }
-        a {
-            color: #818cf8;
-            text-decoration: underline;
-            transition: color 0.2s;
-        }
-        a:hover, a:focus {
-            color: #f87171;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: #818cf8;
-            font-family: inherit;
-            font-weight: 700;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
+                                <meta charset="UTF-8">
+                            <style>
+                                :root {
+                                    --golden-ratio: 1.618;
+                                    --golden-base: 16px;
+                                    --golden-small: calc(var(--golden-base) / var(--golden-ratio));
+                                    --golden-medium: calc(var(--golden-base) * var(--golden-ratio));
+                                    --golden-large: calc(var(--golden-medium) * var(--golden-ratio));
+                                }
+                                body {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    margin: 0;
+                                    padding: 0;
+                                    min-height: 100vh;
+                                    background: #fff;
+                                }
+                                .skip-link {
+                                    position: absolute;
+                                    left: -9999px;
+                                    top: auto;
+                                    width: 1px;
+                                    height: 1px;
+                                    overflow: hidden;
+                                    z-index: 1000;
+                                    background: #fff;
+                                    color: #000;
+                                    padding: 8px 16px;
+                                    border-radius: 8px;
+                                }
+                                .highlight-text {
+                                    font-size: 1.35rem;
+                                    font-weight: 600;
+                                    margin-bottom: 12px;
+                                }
+                                .google-play-img {
+                                    width: 340px;
+                                    max-width: 100%;
+                                    height: auto;
+                                    display: inline-block;
+                                }
+                                .info-box {
+                                    font-size: 0.98rem;
+                                    color: #444;
+                                    margin: 18px auto 0 auto;
+                                    max-width: 520px;
+                                    line-height: 1.5;
+                                    background: #faf8fd;
+                                    border-radius: 10px;
+                                    padding: 16px 18px 12px 18px;
+                                    box-shadow: 0 2px 8px 0 #eae2f7;
+                                }
+                                .highlight-purple {
+                                    color: #7a3eb1;
+                                    font-weight: 500;
+                                }
+                                .star-rating {
+                                    font-weight: bold;
+                                }
+                                .testimonial-author {
+                                    font-size: 0.95rem;
+                                    opacity: 0.7;
+                                }
+                                .press-logos {
+                                    margin-top: 2rem;
+                                    text-align: center;
+                                }
+                                .faq-section {
+                                    background: #0f172a;
+                                    color: #f8fafc;
+                                    padding: 60px 20px;
+                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                }
+                                .faq-inner {
+                                    max-width: 800px;
+                                    margin: 0 auto;
+                                }
+                                .faq-title-main {
+                                    text-align: center;
+                                    color: #818cf8;
+                                    margin-bottom: 40px;
+                                    font-size: 2rem;
+                                }
+                                .faq-subtitle {
+                                    color: #6366f1;
+                                    border-bottom: 1px solid #1e293b;
+                                    padding-bottom: 10px;
+                                    margin-top: 30px;
+                                }
+                                .faq-details {
+                                    background: #1e293b;
+                                    margin-bottom: 10px;
+                                    border-radius: 8px;
+                                    overflow: hidden;
+                                }
+                                .faq-summary {
+                                    padding: 15px;
+                                    cursor: pointer;
+                                    font-weight: bold;
+                                    list-style: none;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                }
+                                .faq-plus {
+                                    color: #818cf8;
+                                }
+                                .faq-answer {
+                                    padding: 15px;
+                                    background: #334155;
+                                    line-height: 1.6;
+                                    color: #cbd5e1;
+                                }
+                                @media (max-width: 600px) {
+                                    main, .grid, .card, .testimonial-card, .faq-container, .faq-container details, .footer-keywords, .cta-button, .sticky-download-btn, .logo-img, .mockup-img, .card-icon, h1, h2, h3, h4, h5, h6, p, .feature-title, .feature-desc, .faq-title, .faq-desc {
+                                        max-width: 360px;
+                                        width: 100%;
+                                    }
+                                    .footer-keywords {
+                                        max-width: 360px;
+                                    }
+                                    .google-play-img {
+                                        width: 100%;
+                                    }
+                                    .faq-inner {
+                                        max-width: 360px;
+                                    }
+                                }
+                            </style>
+                    <style>
+                        :root {
+                            --golden-ratio: 1.618;
+                            --golden-base: 16px;
+                            --golden-small: calc(var(--golden-base) / var(--golden-ratio));
+                            --golden-medium: calc(var(--golden-base) * var(--golden-ratio));
+                            --golden-large: calc(var(--golden-medium) * var(--golden-ratio));
+                        }
+                        body {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 0;
+                            padding: 0;
+                            min-height: 100vh;
+                            background: #fff;
+                        }
+                        main, .grid, .card, .testimonial-card, .faq-container, .footer-keywords, .cta-button, .sticky-download-btn, .logo-img, .mockup-img, .card-icon, h1, h2, h3, h4, h5, h6, p, .feature-title, .feature-desc, .faq-title, .faq-desc {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                        .grid {
+                            flex-wrap: wrap;
+                            gap: var(--golden-large);
+                            max-width: 1200px;
+                            width: 100%;
+                        }
+                        .card, .testimonial-card, .faq-container, .faq-container details {
+                            max-width: 480px;
+                            width: 100%;
+                            margin-bottom: var(--golden-large);
+                        }
+                        .cta-button, .sticky-download-btn {
+                            max-width: 360px;
+                            width: 100%;
+                            margin-top: var(--golden-medium);
+                            margin-bottom: var(--golden-medium);
+                        }
+                        .footer-keywords {
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            gap: var(--golden-small);
+                            max-width: 480px;
+                            width: 100%;
+                        }
+                        .footer-keywords a {
+                            display: inline-block;
+                            text-align: center;
+                            padding: var(--golden-small) var(--golden-medium);
+                        }
+                        h1, h2, h3, h4, h5, h6 {
+                            font-family: 'Inter', Arial, sans-serif;
+                            font-weight: 700;
+                            margin-top: var(--golden-large);
+                            margin-bottom: var(--golden-medium);
+                        }
+                        p, .feature-desc, .faq-desc {
+                            font-family: 'Inter', Arial, sans-serif;
+                            font-size: 1rem;
+                            margin-bottom: var(--golden-medium);
+                        }
+                        @media (max-width: 600px) {
+                            main, .grid, .card, .testimonial-card, .faq-container, .faq-container details, .footer-keywords, .cta-button, .sticky-download-btn, .logo-img, .mockup-img, .card-icon, h1, h2, h3, h4, h5, h6, p, .feature-title, .feature-desc, .faq-title, .faq-desc {
+                                max-width: 360px;
+                                width: 100%;
+                            }
+                            .footer-keywords {
+                                max-width: 360px;
+                            }
+                        }
+                    </style>
+            <style>
+                :root {
+                    --phi: 1.618;
+                    --golden-small: 21px;
+                    --golden-large: 34px;
+                }
+                html, body {
+                    background: #0f172a;
+                    color: #f8fafc;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: 1.08rem;
+                    line-height: 1.7;
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                *, *:before, *:after { box-sizing: inherit; }
+                /* Headline & Subline */
+                h1 {
+                    color: #818cf8;
+                    font-family: inherit;
+                    font-weight: 700;
+                    text-align: center;
+                    margin-top: calc(var(--golden-large) * 2);
+                    margin-bottom: var(--golden-small);
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    word-break: break-word;
+                    white-space: normal;
+                    max-width: 900px;
+                    width: 100%;
+                    font-size: 96px;
+                    line-height: 1.1;
+                }
+                h2, .subline, .feature-title, .faq-title {
+                    color: #a5b4fc;
+                    font-family: inherit;
+                    font-weight: 600;
+                    text-align: center;
+                    margin-top: var(--golden-small);
+                    margin-bottom: var(--golden-small);
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    word-break: break-word;
+                    white-space: normal;
+                    max-width: 700px;
+                    width: 100%;
+                    font-size: 36px;
+                    line-height: 1.2;
+                }
+                h3 {
+                    color: #818cf8;
+                    font-family: inherit;
+                    font-weight: 700;
+                    text-align: center;
+                    margin-top: var(--golden-small);
+                    margin-bottom: var(--golden-small);
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    word-break: break-word;
+                    white-space: normal;
+                    max-width: 700px;
+                    width: 100%;
+                    font-size: 28px;
+                    line-height: 1.2;
+                }
+                @media (max-width: 900px) {
+                    h1 { font-size: 56px; }
+                    h2, .subline, .feature-title, .faq-title { font-size: 28px; }
+                    h3 { font-size: 22px; }
+                }
+                @media (max-width: 600px) {
+                    h1 { font-size: 32px; max-width: 100%; }
+                    h2, .subline, .feature-title, .faq-title { font-size: 20px; max-width: 100%; }
+                    h3 { font-size: 16px; max-width: 100%; }
+                }
+                /* Logo & Icons */
+                .logo-img {
+                    display: block;
+                    margin: 0 auto calc(var(--golden-small) * 0.618) auto !important;
+                    max-width: 180px;
+                    width: 38vw;
+                    height: auto;
+                }
+                @media (max-width: 600px) {
+                    .logo-img { max-width: 120px; width: 38vw; }
+                }
+                .card-icon, .mockup-img {
+                    background: #334155;
+                    border-radius: 16px;
+                    display: block;
+                    margin: 0 auto var(--golden-small) auto;
+                    max-width: 38%;
+                    width: 38%;
+                    height: auto;
+                }
+                /* Absätze & Listen */
+                p, .feature-desc, .faq-desc {
+                    color: #f1f5f9;
+                    font-size: 20px;
+                    line-height: 1.7;
+                    margin: var(--golden-small) 20px var(--golden-small) 20px;
+                    text-align: center;
+                    max-width: 700px;
+                    word-break: break-word;
+                }
+                ul, ol {
+                    margin: var(--golden-small) 0 var(--golden-small) 0;
+                    padding-left: 1.2em;
+                }
+                li {
+                    font-size: 18px;
+                    line-height: 1.5;
+                    margin-bottom: 13px;
+                }
+                /* Grid & Karten */
+                .grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: stretch;
+                    gap: var(--golden-large);
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 1200px;
+                    width: 100%;
+                }
+                .grid-col-12, .grid-col-4, .grid-col-3, .grid-col-6 {
+                    flex: 1 1 100%;
+                    max-width: 100%;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+                @media (min-width: 900px) {
+                    .grid-col-4 { flex: 1 1 22%; max-width: 22%; }
+                    .grid-col-3 { flex: 1 1 22%; max-width: 22%; }
+                    .grid-col-6 { flex: 1 1 45%; max-width: 45%; }
+                    .grid-col-12 { flex: 1 1 100%; max-width: 100%; }
+                }
+                @media (max-width: 900px) {
+                    .grid { gap: var(--golden-small); }
+                }
+                @media (max-width: 600px) {
+                    .grid { gap: 13px; max-width: 340px; width: 100%; margin-left: auto; margin-right: auto; }
+                    .grid-col-4, .grid-col-3, .grid-col-6, .grid-col-12 { max-width: 100%; }
+                }
+                .card, .testimonial-card, .faq-container details {
+                    background: #1e293b;
+                    color: #f8fafc;
+                    border-radius: 14px;
+                    box-shadow: 0 2px 12px 0 #1e293b33;
+                    padding: var(--golden-large) var(--golden-small);
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 420px;
+                }
+                /* Buttons */
+                .cta-button, .sticky-download-btn {
+                    background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+                    color: #fff;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 22px 0;
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    box-shadow: 0 2px 12px 0 #818cf833;
+                    transition: background 0.2s, color 0.2s;
+                    width: 340px;
+                    max-width: 95vw;
+                    display: block;
+                    margin: var(--golden-large) auto var(--golden-large) auto;
+                    text-align: center;
+                }
+                .cta-button:hover, .sticky-download-btn:hover {
+                    background: linear-gradient(90deg, #f87171 0%, #6366f1 100%);
+                    color: #fff;
+                }
+                /* FAQ & Testimonials */
+                .faq-container details, .testimonial-card {
+                    margin-bottom: var(--golden-large);
+                    padding: var(--golden-small);
+                }
+                /* Footer-Links */
+                .footer-keywords {
+                    background: #1e293b;
+                    color: #fff;
+                    border-radius: 14px;
+                    padding: var(--golden-small) 0 8px 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 900px;
+                    font-size: 18px;
+                    text-align: center;
+                    word-break: break-word;
+                }
+                .footer-keywords a {
+                    color: #fff !important;
+                    margin: 0 var(--golden-small);
+                    font-size: 18px;
+                    display: inline-block;
+                    word-break: break-word;
+                }
+                @media (max-width: 600px) {
+                    .footer-keywords, .footer-keywords a { max-width: 340px; width: 100%; font-size: 15px; }
+                }
+                /* Farbkontraste */
+                a, .feature-title, .faq-title { color: #a5b4fc; }
+                .gradient-text { background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+            </style>
         <style>
             html, body {
                 background: #0f172a;
@@ -42,117 +427,74 @@
                 padding: 0;
                 box-sizing: border-box;
             }
-            *, *:before, *:after {
-                box-sizing: inherit;
-            }
-            a {
-                color: #818cf8;
-                text-decoration: underline;
-                transition: color 0.2s;
-            }
-            a:hover, a:focus {
-                color: #f87171;
-            }
+            *, *:before, *:after { box-sizing: inherit; }
+            /* Überschriften */
             h1, h2, h3, h4, h5, h6 {
                 color: #818cf8;
                 font-family: inherit;
                 font-weight: 700;
-                margin-top: 1.2rem;
-                margin-bottom: 0.6rem;
                 text-align: center;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
                 margin-left: 20px;
                 margin-right: 20px;
                 word-break: break-word;
                 white-space: normal;
+                max-width: 900px;
+                width: 100%;
+            }
+            h1 {
+                font-size: 96px;
+                line-height: 1.01;
+                margin-top: 2.5rem;
+                margin-bottom: 2.5rem;
             }
             h2 {
                 font-size: 36px;
-                word-break: break-word;
-                white-space: normal;
-            }
-                line-height: 1.01;
-                word-break: break-word;
-                width: 100vw;
-                max-width: 100vw;
-                margin-left: calc(-50vw + 50%);
-                margin-top: 1.2rem;
+                margin-top: 2rem;
                 margin-bottom: 1.2rem;
-                text-align: center;
-                display: block;
             }
-            @media (max-width: 1200px) {
-                h1 { font-size: 96px; }
+            h3 {
+                font-size: 28px;
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            @media (max-width: 900px) {
+                h1 { font-size: 56px; }
+                h2 { font-size: 28px; }
+                h3 { font-size: 22px; }
             }
             @media (max-width: 600px) {
-                h1 { font-size: 36px; margin-top: 1.5rem; margin-bottom: 1.5rem; max-width: 100%; width: 100%; margin-left: auto; margin-right: auto; }
-                .grid { gap: 0.3rem; max-width: 340px; width: 100%; margin-left: auto; margin-right: auto; }
-                .card, .testimonial-card, .faq-container details { max-width: 340px; width: 100%; padding: 0.4rem 0.1rem; margin-left: auto; margin-right: auto; }
-                .logo-img, .mockup-img, .card-icon { max-width: 340px; width: 100%; height: auto; margin-left: auto; margin-right: auto; }
-                .cta-button, .sticky-download-btn { max-width: 340px; width: 100%; }
-                .footer-keywords { max-width: 340px; width: 100%; margin-left: auto; margin-right: auto; }
+                h1 { font-size: 32px; max-width: 100%; }
+                h2 { font-size: 20px; max-width: 100%; }
+                h3 { font-size: 16px; max-width: 100%; }
             }
-            }
-            .logo-img {
-                display: block;
-                margin: 0 auto 0.7rem auto !important;
-                padding: 0;
-                max-width: 200px;
-            }
-            p, .card, .testimonial-card, .faq-container details, .footer-keywords {
-                margin-top: 0.6rem;
-                margin-bottom: 0.6rem;
-            }
-            .card, .testimonial-card, .faq-container details {
-                background: #1e293b;
-                color: #f8fafc;
-                border-radius: 14px;
-                box-shadow: 0 2px 12px 0 #1e293b33;
-                padding: 1.1rem 0.7rem;
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 420px;
-            }
-            .card-icon, .mockup-img {
-                background: #334155;
-                border-radius: 16px;
-                display: block;
-                margin: 0 auto 0.5rem auto;
-            }
-            .cta-button, .sticky-download-btn {
-                background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
-                color: #fff;
-                border: none;
-                border-radius: 10px;
-                padding: 12px 0;
-                font-size: 1.25rem;
-                font-weight: 700;
-                box-shadow: 0 2px 12px 0 #818cf833;
-                transition: background 0.2s, color 0.2s;
-                width: 340px;
-                max-width: 95vw;
-                display: block;
-                margin: 1rem auto 1rem auto;
+            /* Sublines & Absätze */
+            .subline, .feature-title, .faq-title {
+                font-size: 26px;
+                font-weight: 600;
+                color: #a5b4fc;
                 text-align: center;
+                margin: 1.2rem 20px 1.2rem 20px;
+                max-width: 700px;
+                word-break: break-word;
             }
-            .cta-button:hover, .sticky-download-btn:hover {
-                background: linear-gradient(90deg, #f87171 0%, #6366f1 100%);
-                color: #fff;
+            p, .feature-desc, .faq-desc {
+                color: #f1f5f9;
+                font-size: 18px;
+                line-height: 1.7;
+                margin: 0.8rem 20px 0.8rem 20px;
+                text-align: center;
+                max-width: 700px;
+                word-break: break-word;
             }
-            .footer-keywords {
-                background: #1e293b;
-                color: #f8fafc;
-                border-radius: 14px;
-                padding: 10px 0 7px 0;
-                margin-left: auto;
-                margin-right: auto;
-                max-width: 900px;
-            }
+            /* Spacing & Grid */
             .grid {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: stretch;
-                gap: 1.2rem;
+                gap: 1.5rem;
                 margin-left: auto;
                 margin-right: auto;
                 max-width: 1200px;
@@ -171,6 +513,98 @@
                 .grid-col-12 { flex: 1 1 100%; max-width: 100%; }
             }
             @media (max-width: 900px) {
+                .grid { gap: 1rem; }
+            }
+            @media (max-width: 600px) {
+                .grid { gap: 0.5rem; max-width: 340px; width: 100%; margin-left: auto; margin-right: auto; }
+                .grid-col-4, .grid-col-3, .grid-col-6, .grid-col-12 { max-width: 100%; }
+            }
+            /* Buttons */
+            .cta-button, .sticky-download-btn {
+                background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+                color: #fff;
+                border: none;
+                border-radius: 10px;
+                padding: 14px 0;
+                font-size: 1.25rem;
+                font-weight: 700;
+                box-shadow: 0 2px 12px 0 #818cf833;
+                transition: background 0.2s, color 0.2s;
+                width: 340px;
+                max-width: 95vw;
+                display: block;
+                margin: 1.2rem auto 1.2rem auto;
+                text-align: center;
+            }
+            .cta-button:hover, .sticky-download-btn:hover {
+                background: linear-gradient(90deg, #f87171 0%, #6366f1 100%);
+                color: #fff;
+            }
+            /* Feature-Karten & FAQ */
+            .card, .testimonial-card, .faq-container details {
+                background: #1e293b;
+                color: #f8fafc;
+                border-radius: 14px;
+                box-shadow: 0 2px 12px 0 #1e293b33;
+                padding: 1.2rem 0.8rem;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 420px;
+            }
+            .card-icon, .mockup-img {
+                background: #334155;
+                border-radius: 16px;
+                display: block;
+                margin: 0 auto 0.7rem auto;
+                max-width: 340px;
+                width: 100%;
+                height: auto;
+            }
+            /* Footer-Links */
+            .footer-keywords {
+                background: #1e293b;
+                color: #f8fafc;
+                border-radius: 14px;
+                padding: 12px 0 8px 0;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 900px;
+                font-size: 18px;
+                text-align: center;
+                word-break: break-word;
+            }
+            .footer-keywords a {
+                color: #fff !important;
+                margin: 0 12px;
+                font-size: 18px;
+                display: inline-block;
+                word-break: break-word;
+            }
+            @media (max-width: 600px) {
+                .footer-keywords, .footer-keywords a { max-width: 340px; width: 100%; font-size: 15px; }
+            }
+            /* Farbkontraste */
+            a, .feature-title, .faq-title { color: #a5b4fc; }
+            .gradient-text { background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; }
+        </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamzzz | Kostenlose KI Traumanalyse & Traumtagebuch App</title>
+    <meta name="description" content="Verstehe deine Träume mit KI-Analysen nach Freud & Jung. 100% kostenlos, sicher und ohne Werbung. Jetzt Dreamzzz Traumtagebuch herunterladen!">
+    <meta name="keywords" content="Traumtagebuch, Traumdeutung, Android, App, KI, Analyse, Schlaf, Träume, Community">
+    <meta name="author" content="Dreamzzz Team">
+    <link rel="stylesheet" href="assets/dreamzzz-landing.css">
+    <style>
+        body {
+            background: #0f172a;
+            color: #f8fafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.08rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        a {
+            color: #818cf8;
+            text-decoration: underline;
                 .grid { gap: 0.7rem; }
                 .card, .testimonial-card, .faq-container details { max-width: 98vw; padding: 0.7rem 0.3rem; }
             }
@@ -228,7 +662,7 @@
         </script>
 </head>
 <body>
-    <a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:1000;background:#fff;color:#000;padding:8px 16px;border-radius:8px;">Zum Inhalt springen</a>
+    <a href="#main" class="skip-link">Zum Inhalt springen</a>
     <header role="banner">
         <div class="grid">
             <div class="lang-bar grid-col-12" aria-label="Sprachauswahl">
@@ -238,27 +672,29 @@
                 <a href="index.ru.html"><img src="assets/russia.png" alt="Russische Version der Dreamzzz App Landingpage" title="Русский" loading="lazy"></a>
                 <a href="index.es.html"><img src="assets/world.png" alt="Spanische Version der Dreamzzz App Landingpage" title="Global" loading="lazy"></a>
             </div>
-            <div class="grid-col-12" style="text-align:center;">
-                <img src="assets/dreamzzz-logo.png" alt="Dreamzzz Logo - KI-gestützte App für Traumanalyse und Traumdeutung" class="logo-img" width="200" height="200" loading="lazy" style="margin-bottom:0;">
-                <h1><span class="gradient-text">Deine Träume.</span><br><span class="gradient-text">Analysiert.</span></h1>
-                <a href="https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk" class="cta-button" aria-label="App jetzt kostenlos herunterladen" style="text-align:center;">DOWNLOAD</a>
+            <div class="grid-col-12">
+                <img src="assets/dreamzzz-logo.png" alt="Dreamzzz Logo - KI-gestützte App für Traumanalyse und Traumdeutung" class="logo-img" width="200" height="200" loading="lazy">
+                <h1><span class="gradient-text">Deine Träume.</span><span class="gradient-text">Analysiert.</span></h1>
+                <a href="https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk" class="cta-button" aria-label="App jetzt kostenlos herunterladen">DOWNLOAD</a>
             </div>
             <div class="mockup-container grid-col-12">
                 <img src="assets/analysis_de.jpg" alt="Smartphone-Screenshot der Dreamzzz App: Analyse eines Traums nach C.G. Jung mit KI-Interpretation" class="mockup-img" width="340" height="752" loading="lazy">
             </div>
-            <div class="grid-col-12" style="margin: 24px 0 16px 0; text-align: center;">
-                <h2 style="font-size:1.35rem; font-weight:700; margin-bottom:8px; margin-left:20px; margin-right:20px; word-break:break-word; white-space:normal;">Dreamzzz – Deine App für moderne Traumdeutung</h2>
-                <p style="font-size:1.08rem; max-width:700px; margin:0 auto; margin-left:20px; margin-right:20px;">Dreamzzz ist mehr als nur ein digitales Traumtagebuch. Wir kombinieren klassische Psychologie mit moderner Technologie, um dir eine tiefgreifende KI-Traumanalyse direkt auf dein Smartphone zu bringen. Egal, ob du spezifische Traumsymbole deuten möchtest oder die Lehren von C.G. Jung und Sigmund Freud bevorzugst – unsere App hilft dir dabei, die verborgene Bedeutung deiner Träume zu entschlüsseln. Nutze unsere kostenlose Traumdeutung online und offline, lerne deine Schlafmuster durch detaillierte Statistiken besser kennen und entdecke im „Ether“ globale Traumtrends einer wachsenden Community. 100% privat, sicher und ohne Werbung.</p>
+            <div class="grid-col-12">
+                <h2>Dreamzzz – Deine App für moderne Traumdeutung</h2>
+                <p>Dreamzzz ist mehr als nur ein digitales Traumtagebuch. Wir kombinieren klassische Psychologie mit moderner Technologie, um dir eine tiefgreifende KI-Traumanalyse direkt auf dein Smartphone zu bringen. Egal, ob du spezifische Traumsymbole deuten möchtest oder die Lehren von C.G. Jung und Sigmund Freud bevorzugst – unsere App hilft dir dabei, die verborgene Bedeutung deiner Träume zu entschlüsseln. Nutze unsere kostenlose Traumdeutung online und offline, lerne deine Schlafmuster durch detaillierte Statistiken besser kennen und entdecke im „Ether“ globale Traumtrends einer wachsenden Community. 100% privat, sicher und ohne Werbung.</p>
             </div>
-            <div class="grid-col-12" style="text-align:center; margin: 32px 0 24px 0;">
-                <div style="font-size:1.35rem;font-weight:600;margin-bottom:12px;">
+            </div>
+            <div class="grid-col-12">
+                <div class="highlight-text">
                     <span class="gradient-text">Bald im Google Play Store!</span>
                 </div>
-                <img src="assets/google.svg" alt="Google Play Store Logo für Dreamzzz App" style="width:340px;max-width:100%;height:auto;display:inline-block;" loading="lazy">
-                <div style="font-size:0.98rem; color:#444; margin:18px auto 0 auto; max-width:520px; line-height:1.5; background:#faf8fd; border-radius:10px; padding:16px 18px 12px 18px; box-shadow:0 2px 8px 0 #eae2f7;">
+                <img src="assets/google.svg" alt="Google Play Store Logo für Dreamzzz App" class="google-play-img" loading="lazy">
+                <div class="info-box">
+                    <span class="highlight-purple">Warum warten?</span>
                     <strong>Wir arbeiten mit Hochdruck daran, Dreamzzz für alle Android-Nutzer offiziell im Store bereitzustellen.</strong><br>
                     Freue dich auf automatische Updates, Cloud-Synchronisierung (optional) und noch tiefere KI-Einblicke.<br><br>
-                    <span style="color:#7a3eb1; font-weight:500;">Warum warten?</span> Sichere dir die aktuelle Version <b>1.2.3</b> bereits jetzt über unseren direkten Highspeed-Download (APK).<br>
+                    Sichere dir die aktuelle Version <b>1.2.3</b> bereits jetzt über unseren direkten Highspeed-Download (APK).<br>
                     Erlebe volle Funktionalität, absolute Privatsphäre und eine werbefreie Analyse deiner Träume – <b>heute noch</b>.
                 </div>
             </div>
@@ -324,120 +760,115 @@
         </section>
         <section id="social-proof" aria-labelledby="social-proof-heading">
             <div class="grid">
-                <div class="grid-col-12" style="margin: 36px 0 24px 0; text-align: center;">
-                    <h2 style="font-size:1.22rem; font-weight:700; margin-bottom:8px; color:#7a3eb1;">Endlich ein Traumtagebuch, das mitdenkt!</h2>
-                    <p style="font-size:1.05rem; max-width:650px; margin:0 auto; color:#333; line-height:1.6; background:#f6f2fa; border-radius:10px; padding:14px 18px 12px 18px; box-shadow:0 2px 8px 0 #ede2f7;">
+                <div class="grid-col-12">
+                    <h2 class="highlight-purple">Endlich ein Traumtagebuch, das mitdenkt!</h2>
+                    <p class="info-box">
+                        <span class="highlight-purple">Probiere es aus</span>
                         Suchst du eine einfache Möglichkeit, deine Träume festzuhalten <b>UND</b> zu verstehen? <b>Dreamzzz</b> bietet dir eine strukturierte Übersicht und intelligente Deutungshilfen – komplett ohne Abo-Modell oder nervige Bannerwerbung.<br>
-                        <span style="color:#7a3eb1; font-weight:500;">Probiere es aus</span> und schau dir die globalen Traum-Trends im „Ether“ an!
+                        und schau dir die globalen Traum-Trends im „Ether“ an!
                     </p>
                 </div>
                 <h2 id="social-proof-heading" class="grid-col-12">Was Nutzer sagen</h2>
                 <div class="testimonial-card grid-col-4">
-                    <div style="font-weight:bold;" aria-label="5 Sterne Bewertung">⭐️⭐️⭐️⭐️⭐️</div>
+                    <div class="star-rating" aria-label="5 Sterne Bewertung">⭐️⭐️⭐️⭐️⭐️</div>
                     <p>„Die beste Traumtagebuch-App, die ich je genutzt habe. Die Analyse ist genial!“</p>
-                    <div style="font-size:0.95rem;opacity:0.7;">– Anna, 27</div>
+                    <div class="testimonial-author">– Anna, 27</div>
                 </div>
                 <div class="testimonial-card grid-col-4">
-                    <div style="font-weight:bold;" aria-label="5 Sterne Bewertung">⭐️⭐️⭐️⭐️⭐️</div>
+                    <div class="star-rating" aria-label="5 Sterne Bewertung">⭐️⭐️⭐️⭐️⭐️</div>
                     <p>„Endlich verstehe ich meine Träume! Super Design und tolle Community.“</p>
-                    <div style="font-size:0.95rem;opacity:0.7;">– Max, 34</div>
+                    <div class="testimonial-author">– Max, 34</div>
                 </div>
                 <div class="testimonial-card grid-col-4">
-                    <div style="font-weight:bold;" aria-label="5 Sterne Bewertung">⭐️⭐️⭐️⭐️⭐️</div>
+                    <div class="star-rating" aria-label="5 Sterne Bewertung">⭐️⭐️⭐️⭐️⭐️</div>
                     <p>„Die Live-Äther-Funktion ist einzigartig. Absolute Empfehlung!“</p>
-                    <div style="font-size:0.95rem;opacity:0.7;">– Sophie, 22</div>
+                    <div class="testimonial-author">– Sophie, 22</div>
                 </div>
-                <div class="press-logos grid-col-12" style="margin-top:2rem;text-align:center;">
+                <div class="press-logos grid-col-12">
                     
                 </div>
             </div>
         </section>
-        <section id="faq" aria-labelledby="faq-heading">
-            <section id="faq" style="background: #0f172a; color: #f8fafc; padding: 60px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="text-align: center; color: #818cf8; margin-bottom: 40px; font-size: 2rem;">Häufig gestellte Fragen (FAQ)</h2>
-
-        <h3 style="color: #6366f1; border-bottom: 1px solid #1e293b; padding-bottom: 10px; margin-top: 30px;">1. Grundlagen & Analyse</h3>
+        <section id="faq" aria-labelledby="faq-heading" class="faq-section">
+                <div class="faq-inner">
+                    <h2 class="faq-title-main">Häufig gestellte Fragen (FAQ)</h2>
+                    <h3 class="faq-subtitle">1. Grundlagen & Analyse</h3>
         
         <div class="faq-container">
-            <details style="background: #1e293b; margin-bottom: 10px; border-radius: 8px; overflow: hidden;">
-                <summary style="padding: 15px; cursor: pointer; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    Wie funktioniert die KI-gestützte Traumanalyse?
-                    <span style="color: #818cf8;">+</span>
-                </summary>
-                <div style="padding: 15px; background: #334155; line-height: 1.6; color: #cbd5e1;">
-                    Dreamzzz nutzt fortschrittliche Sprachmodelle, die mit psychologischem Fachwissen trainiert wurden. Sobald du deinen Traum eingibst, analysiert die KI Symbole, Emotionen und Handlungsstränge basierend auf den von dir gewählten Methoden (z. B. Freud oder Jung).
-                </div>
-            </details>
+                    <details class="faq-details">
+                        <summary class="faq-summary">
+                            Wie funktioniert die KI-gestützte Traumanalyse?
+                            <span class="faq-plus">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            Dreamzzz nutzt fortschrittliche Sprachmodelle, die mit psychologischem Fachwissen trainiert wurden. Sobald du deinen Traum eingibst, analysiert die KI Symbole, Emotionen und Handlungsstränge basierend auf den von dir gewählten Methoden (z. B. Freud oder Jung).
+                        </div>
+                    </details>
 
-            <details style="background: #1e293b; margin-bottom: 10px; border-radius: 8px; overflow: hidden;">
-                <summary style="padding: 15px; cursor: pointer; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    Muss ich Vorwissen in Psychologie haben?
-                    <span style="color: #818cf8;">+</span>
-                </summary>
-                <div style="padding: 15px; background: #334155; line-height: 1.6; color: #cbd5e1;">
-                    Nein. Die App ist so gestaltet, dass sie komplexe psychologische Konzepte in leicht verständliche Sprache übersetzt. Sie gibt dir konkrete Impulse, wie du die Erkenntnisse in deinen Alltag integrieren kannst.
-                </div>
-            </details>
+                    <details class="faq-details">
+                        <summary class="faq-summary">
+                            Muss ich Vorwissen in Psychologie haben?
+                            <span class="faq-plus">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            Nein. Die App ist so gestaltet, dass sie komplexe psychologische Konzepte in leicht verständliche Sprache übersetzt. Sie gibt dir konkrete Impulse, wie du die Erkenntnisse in deinen Alltag integrieren kannst.
+                        </div>
+                    </details>
 
-            <details style="background: #1e293b; margin-bottom: 10px; border-radius: 8px; overflow: hidden;">
-                <summary style="padding: 15px; cursor: pointer; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    Kann die App auch Alpträume deuten?
-                    <span style="color: #818cf8;">+</span>
-                </summary>
-                <div style="padding: 15px; background: #334155; line-height: 1.6; color: #cbd5e1;">
-                    Ja, Dreamzzz ist besonders hilfreich bei wiederkehrenden Alpträumen. Die Analyse hilft dir dabei, die zugrunde liegenden Ängste zu identifizieren und bietet eine "Kompensationsfunktion" an.
-                </div>
-            </details>
+                    <details class="faq-details">
+                        <summary class="faq-summary">
+                            Kann die App auch Alpträume deuten?
+                            <span class="faq-plus">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            Ja, Dreamzzz ist besonders hilfreich bei wiederkehrenden Alpträumen. Die Analyse hilft dir dabei, die zugrunde liegenden Ängste zu identifizieren und bietet eine "Kompensationsfunktion" an.
+                        </div>
+                    </details>
         </div>
 
-        <h3 style="color: #6366f1; border-bottom: 1px solid #1e293b; padding-bottom: 10px; margin-top: 40px;">2. Datenschutz & Sicherheit</h3>
-        
-        <div class="faq-container">
-            <details style="background: #1e293b; margin-bottom: 10px; border-radius: 8px; overflow: hidden;">
-                <summary style="padding: 15px; cursor: pointer; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    Sind meine Träume privat und sicher?
-                    <span style="color: #818cf8;">+</span>
-                </summary>
-                <div style="padding: 15px; background: #334155; line-height: 1.6; color: #cbd5e1;">
-                    Absolut. Dreamzzz verfolgt einen "Local-First"-Ansatz. Deine Traumtexte werden auf deinem Gerät gespeichert und nicht auf unseren Servern dauerhaft archiviert.
-                </div>
-            </details>
+                    <h3 class="faq-subtitle">2. Datenschutz & Sicherheit</h3>
+                    <div class="faq-container">
+                        <details class="faq-details">
+                            <summary class="faq-summary">
+                                Sind meine Träume privat und sicher?
+                                <span class="faq-plus">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                Absolut. Dreamzzz verfolgt einen "Local-First"-Ansatz. Deine Traumtexte werden auf deinem Gerät gespeichert und nicht auf unseren Servern dauerhaft archiviert.
+                            </div>
+                        </details>
+                        <details class="faq-details">
+                            <summary class="faq-summary">
+                                Werden meine Daten für Werbung verkauft?
+                                <span class="faq-plus">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                Niemals. Die App ist 100% werbefrei und wir monetarisieren keine Nutzerdaten. Dein Unterbewusstsein gehört dir allein.
+                            </div>
+                        </details>
+                    </div>
 
-            <details style="background: #1e293b; margin-bottom: 10px; border-radius: 8px; overflow: hidden;">
-                <summary style="padding: 15px; cursor: pointer; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    Werden meine Daten für Werbung verkauft?
-                    <span style="color: #818cf8;">+</span>
-                </summary>
-                <div style="padding: 15px; background: #334155; line-height: 1.6; color: #cbd5e1;">
-                    Niemals. Die App ist 100% werbefrei und wir monetarisieren keine Nutzerdaten. Dein Unterbewusstsein gehört dir allein.
-                </div>
-            </details>
-        </div>
-
-        <h3 style="color: #6366f1; border-bottom: 1px solid #1e293b; padding-bottom: 10px; margin-top: 40px;">3. Community & Ether</h3>
-        
-        <div class="faq-container">
-            <details style="background: #1e293b; margin-bottom: 10px; border-radius: 8px; overflow: hidden;">
-                <summary style="padding: 15px; cursor: pointer; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    Was genau ist „The Ether“?
-                    <span style="color: #818cf8;">+</span>
-                </summary>
-                <div style="padding: 15px; background: #334155; line-height: 1.6; color: #cbd5e1;">
-                    Der Ether ist eine anonymisierte Visualisierung der kollektiven Traumwelt. Du siehst dort Trends und Symbole, die aktuell weltweit besonders häufig geträumt werden.
-                </div>
-            </details>
-
-            <details style="background: #1e293b; margin-bottom: 10px; border-radius: 8px; overflow: hidden;">
-                <summary style="padding: 15px; cursor: pointer; font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                    Können andere Nutzer meine Texte lesen?
-                    <span style="color: #818cf8;">+</span>
-                </summary>
-                <div style="padding: 15px; background: #334155; line-height: 1.6; color: #cbd5e1;">
-                    Nein. In den Ether fließen nur anonymisierte Schlagworte ein. Dein persönlicher Text bleibt für andere unsichtbar.
-                </div>
-            </details>
-        </div>
+                    <h3 class="faq-subtitle">3. Community & Ether</h3>
+                    <div class="faq-container">
+                        <details class="faq-details">
+                            <summary class="faq-summary">
+                                Was genau ist „The Ether“?
+                                <span class="faq-plus">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                Der Ether ist eine anonymisierte Visualisierung der kollektiven Traumwelt. Du siehst dort Trends und Symbole, die aktuell weltweit besonders häufig geträumt werden.
+                            </div>
+                        </details>
+                        <details class="faq-details">
+                            <summary class="faq-summary">
+                                Können andere Nutzer meine Texte lesen?
+                                <span class="faq-plus">+</span>
+                            </summary>
+                            <div class="faq-answer">
+                                Nein. In den Ether fließen nur anonymisierte Schlagworte ein. Dein persönlicher Text bleibt für andere unsichtbar.
+                            </div>
+                        </details>
+                    </div>
     </div>
 </section>
 
@@ -453,18 +884,59 @@
     <footer role="contentinfo">
         
     </footer>
-    <a href="https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk" class="sticky-download-btn" aria-label="App herunterladen" style="text-align:center;">DOWNLOAD</a>
+<a href="https://dreamzzz.app/download/Dreamzzz_v1.2.3_ProdRelease.apk" class="sticky-download-btn" aria-label="App herunterladen">DOWNLOAD</a>
 </body>
 </html>
-
-    <section class="footer-keywords" style="margin:2rem 0 1rem 0;text-align:center;font-size:0.95rem;">
+    <section class="footer-keywords">
         <strong>Beliebte Themen:</strong>
-        <a href="#" style="color:#fff !important;">Traumdeutung Schlange</a>,
-        <a href="#" style="color:#fff !important;">Fliegen im Traum</a>,
-        <a href="#" style="color:#fff !important;">Traumtagebuch führen</a>,
-        <a href="#" style="color:#fff !important;">Psychologische Traumanalyse</a>,
-        <a href="#" style="color:#fff !important;">KI Traumanalyse</a>,
-        <a href="#" style="color:#fff !important;">Traumsymbole Bedeutung</a>,
-        <a href="#" style="color:#fff !important;">Luzides Träumen lernen</a>,
-        <a href="#" style="color:#fff !important;">Alpträume verstehen</a>
+        <a href="#" class="footer-link">Traumdeutung Schlange</a>,
+        <a href="#" class="footer-link">Fliegen im Traum</a>,
+        <a href="#" class="footer-link">Traumtagebuch führen</a>,
+        <a href="#" class="footer-link">Psychologische Traumanalyse</a>,
+        <a href="#" class="footer-link">KI Traumanalyse</a>,
+        <a href="#" class="footer-link">Traumsymbole Bedeutung</a>,
+        <a href="#" class="footer-link">Luzides Träumen lernen</a>,
+        <a href="#" class="footer-link">Alpträume verstehen</a>
     </section>
+        <style>
+            /* ...existing code... */
+            .sticky-download-btn {
+                display: block;
+                margin: 2rem auto 1rem auto;
+                text-align: center;
+                max-width: 360px;
+                width: 100%;
+                background: #7a3eb1;
+                color: #fff;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border: none;
+                border-radius: 8px;
+                padding: 14px 0;
+                box-shadow: 0 2px 8px 0 #eae2f7;
+                cursor: pointer;
+                text-decoration: none;
+                transition: background 0.2s;
+            }
+            .sticky-download-btn:hover {
+                background: #a21caf;
+            }
+            .footer-keywords {
+                margin: 2rem 0 1rem 0;
+                text-align: center;
+                font-size: 0.95rem;
+            }
+            .footer-link {
+                color: #f8fafc;
+                text-decoration: underline;
+                transition: color 0.2s;
+            }
+            .footer-link:hover {
+                color: #818cf8;
+            }
+            /* Farbkontrast für .highlight-purple verbessern */
+            .highlight-purple {
+                color: #6d28d9;
+                font-weight: 500;
+            }
+        </style>

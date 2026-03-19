@@ -1,3 +1,80 @@
+/* --- Präzise, fein abgestufte Responsive Breakpoints für alle wichtigen Gerätegrößen --- */
+
+@media (max-width: 414px) {
+    .container {
+        padding: 0 4px;
+        gap: 6px;
+    }
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xs);
+    }
+    .grid-col-12, .grid-col-6, .grid-col-4, .grid-col-3, .grid-col-2 {
+        grid-column: span 2;
+    }
+    h1 {
+        font-size: 2.1rem;
+        margin-bottom: 32px;
+    }
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: var(--space-xs);
+    }
+    .card, .testimonial-card {
+        padding: var(--space-s) var(--space-xxs);
+        min-width: 0;
+        max-width: 98vw;
+    }
+    .sticky-download-btn {
+        width: 98vw;
+        max-width: 360px;
+        font-size: 0.98rem;
+        padding: 0.9em 0;
+    }
+    .mockup-img {
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 375px) {
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1rem; }
+    .sticky-download-btn { font-size: 0.93rem; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 0 2px; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.2rem; }
+    .card, .testimonial-card { padding: var(--space-s) var(--space-xxs); }
+}
+
+@media (max-width: 540px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.25rem; }
+    .sticky-download-btn { font-size: 1rem; }
+}
+
+@media (max-width: 360px) {
+    h1 { font-size: 1.3rem; }
+    h2 { font-size: 0.95rem; }
+    .sticky-download-btn { font-size: 0.9rem; }
+    .container { padding: 0 1px; }
+}
+
+@media (min-width: 1200px) {
+    .container { max-width: 1200px; }
+    .grid { max-width: 1200px; }
+}
+
+/* --- Maximalbreite für mobile Ansicht --- */
+@media (max-width: 600px) {
+    .container, .grid, body, html {
+        max-width: 360px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
 /* Dreamzzz Landing Page External Styles */
 
 :root {
